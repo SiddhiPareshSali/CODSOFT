@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced Scientific Calculator</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body class="dark-theme">
+    <div class="calculator-wrapper">
+        <!-- Main Calculator Container -->
+        <div class="calculator-container">
+            <!-- Top Controls -->
+            <div class="top-controls">
+                <button class="theme-toggle" onclick="toggleTheme()" title="Toggle Theme">
+                    <span class="icon">🌓</span>
+                </button>
+                <button class="history-toggle" onclick="toggleHistory()" title="View History">
+                    <span class="icon">📜</span>
+                </button>
+            </div>
+
+            <!-- Display Screen -->
+            <div class="screen">
+                <div class="previous-operand" id="previous-operand"></div>
+                <div class="current-operand" id="display">0</div>
+            </div>
+            
+            <!-- Buttons Grid -->
+            <div class="buttons-grid">
+                <!-- Scientific Row 1 -->
+                <button class="btn sci" onclick="scientific('sin')">sin</button>
+                <button class="btn sci" onclick="scientific('cos')">cos</button>
+                <button class="btn sci" onclick="scientific('tan')">tan</button>
+                <button class="btn sci" onclick="scientific('sqrt')">√</button>
+
+                <!-- Scientific Row 2 -->
+                <button class="btn sci" onclick="scientific('log')">log</button>
+                <button class="btn sci" onclick="scientific('ln')">ln</button>
+                <button class="btn sci" onclick="scientific('pow')">xʸ</button>
+                <button class="btn sci" onclick="scientific('pi')">π</button>
+                
+                <!-- Standard Buttons -->
+                <button class="btn clear" onclick="clearDisplay()">AC</button>
+                <button class="btn delete" onclick="deleteNumber()">DEL</button>
+                <button class="btn operator" onclick="appendOperator('%')">%</button>
+                <button class="btn operator" onclick="appendOperator('/')">÷</button>
+                
+                <button class="btn num" onclick="appendNumber('7')">7</button>
+                <button class="btn num" onclick="appendNumber('8')">8</button>
+                <button class="btn num" onclick="appendNumber('9')">9</button>
+                <button class="btn operator" onclick="appendOperator('*')">×</button>
+                
+                <button class="btn num" onclick="appendNumber('4')">4</button>
+                <button class="btn num" onclick="appendNumber('5')">5</button>
+                <button class="btn num" onclick="appendNumber('6')">6</button>
+                <button class="btn operator" onclick="appendOperator('-')">-</button>
+                
+                <button class="btn num" onclick="appendNumber('1')">1</button>
+                <button class="btn num" onclick="appendNumber('2')">2</button>
+                <button class="btn num" onclick="appendNumber('3')">3</button>
+                <button class="btn operator" onclick="appendOperator('+')">+</button>
+                
+                <button class="btn num zero" onclick="appendNumber('0')">0</button>
+                <button class="btn num" onclick="appendNumber('.')">.</button>
+                <button class="btn equal" onclick="calculate()">=</button>
+            </div>
+        </div>
+
+        <!-- Sliding History Panel -->
+        <div class="history-panel" id="history-panel">
+            <h3>Calculation History</h3>
+            <div class="history-list" id="history-list">
+                <p class="empty-msg">No history yet</p>
+            </div>
+            <button class="clear-hist-btn" onclick="clearHistory()">Clear All</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
