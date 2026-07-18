@@ -1,0 +1,340 @@
+/* Core Reset & Typography */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    scroll-behavior: smooth;
+}
+
+:root {
+    --bg-main: #FAFAFC;
+    --primary: #1E3A8A;       /* Professional Deep Blue */
+    --accent: #3B82F6;        /* Bright Tech Blue */
+    --text-dark: #0F172A;
+    --text-muted: #475569;
+    --border: #E2E8F0;
+}
+
+body {
+    background-color: var(--bg-main);
+    color: var(--text-dark);
+    line-height: 1.6;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+/* Header Alignment */
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 8%;
+    background: rgba(250, 250, 252, 0.85);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+    z-index: 1000;
+}
+
+header .logo {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--text-dark);
+    letter-spacing: -0.5px;
+}
+
+header .logo span {
+    color: var(--accent);
+}
+
+header nav {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+header nav a {
+    text-decoration: none;
+    color: var(--text-muted);
+    font-weight: 500;
+    font-size: 0.95rem;
+    transition: color 0.2s;
+}
+
+header nav a:hover {
+    color: var(--primary);
+}
+
+.btn-nav {
+    background-color: var(--primary);
+    color: white !important;
+    padding: 8px 20px;
+    border-radius: 8px;
+}
+
+/* Hero Columns Grid */
+.hero {
+    padding: 160px 0 100px 0;
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
+}
+
+.hero-grid {
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 60px;
+    align-items: center;
+}
+
+.badge {
+    background-color: rgba(59, 130, 246, 0.1);
+    color: var(--accent);
+    padding: 6px 14px;
+    border-radius: 6px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    display: inline-block;
+    margin-bottom: 15px;
+}
+
+.hero-text h1 {
+    font-size: clamp(2.2rem, 3.5vw, 3.5rem);
+    color: var(--text-dark);
+    line-height: 1.15;
+    margin-bottom: 20px;
+    font-weight: 700;
+}
+
+.hero-text p {
+    color: var(--text-muted);
+    font-size: 1.1rem;
+    margin-bottom: 35px;
+}
+
+.btn-group {
+    display: flex;
+    gap: 15px;
+}
+
+.btn-primary {
+    background-color: var(--primary);
+    color: white;
+    padding: 14px 28px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: background 0.2s;
+}
+
+.btn-primary:hover {
+    background-color: #152A66;
+}
+
+.btn-secondary {
+    border: 1px solid var(--border);
+    background: white;
+    color: var(--text-dark);
+    padding: 14px 28px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: background 0.2s;
+}
+
+.btn-secondary:hover {
+    background: #F1F5F9;
+}
+
+/* Visual Dashboard Mockup Card */
+.dashboard-mockup {
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.04);
+    overflow: hidden;
+}
+
+.mockup-header {
+    background: #F8FAFC;
+    padding: 12px;
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    gap: 6px;
+}
+
+.mockup-header .dot {
+    width: 10px;
+    height: 10px;
+    background: #CBD5E1;
+    border-radius: 50%;
+}
+
+.mockup-body {
+    padding: 30px;
+}
+
+.mockup-body h3 {
+    margin-bottom: 20px;
+    font-size: 1.1rem;
+}
+
+.mockup-bar {
+    background: #F1F5F9;
+    height: 35px;
+    border-radius: 6px;
+    margin-bottom: 15px;
+    position: relative;
+    overflow: hidden;
+}
+
+.mockup-bar::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    background: var(--accent);
+    width: inherit;
+}
+
+.mockup-bar span {
+    position: relative;
+    z-index: 2;
+    padding-left: 12px;
+    line-height: 35px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--text-dark);
+}
+
+/* Columns Grid Section */
+.services-section {
+    padding: 100px 0;
+    background: white;
+    border-y: 1px solid var(--border);
+}
+
+.section-title {
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 50px;
+    font-weight: 700;
+}
+
+.columns-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.column-card {
+    padding: 40px 30px;
+    border-radius: 12px;
+    background: var(--bg-main);
+    border: 1px solid var(--border);
+    transition: transform 0.2s;
+}
+
+.column-card:hover {
+    transform: translateY(-4px);
+}
+
+.card-icon {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.column-card h3 {
+    margin-bottom: 12px;
+    font-size: 1.25rem;
+}
+
+.column-card p {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+}
+
+/* Box Padding CTA Section */
+.cta-section {
+    padding: 100px 0;
+}
+
+.cta-container {
+    background: var(--primary);
+    color: white;
+    padding: 60px 40px;
+    border-radius: 16px;
+    text-align: center;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.cta-container h2 {
+    font-size: 2rem;
+    margin-bottom: 15px;
+}
+
+.cta-container p {
+    margin-bottom: 30px;
+    color: #93C5FD;
+}
+
+.white-btn {
+    background: white;
+    color: var(--primary);
+}
+
+.white-btn:hover {
+    background: #F1F5F9;
+}
+
+/* Footer Alignment */
+footer {
+    padding: 40px 0;
+    border-top: 1px solid var(--border);
+    background: white;
+    font-size: 0.9rem;
+    color: var(--text-muted);
+}
+
+.footer-grid {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer-links {
+    display: flex;
+    gap: 20px;
+}
+
+.footer-links a {
+    color: var(--text-muted);
+    text-decoration: none;
+}
+
+/* Prevent Overlapping Layout Items on Small Screens */
+@media (max-width: 900px) {
+    .hero-grid {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+    .btn-group {
+        justify-content: center;
+    }
+    .footer-grid {
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+    }
+}
